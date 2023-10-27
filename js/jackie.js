@@ -39,7 +39,7 @@ class Jackie {
         }
 
         this.init()
-        this.liveJackie = 5
+        this.liveJackie = 10
 
 
     }

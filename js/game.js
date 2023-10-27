@@ -160,6 +160,12 @@ const Game = {
         }
 
 
+        if (this.nave.liveNave === 0) {
+            this.gameOver()
+        }
+
+
+
 
 
 
@@ -192,6 +198,11 @@ const Game = {
             this.isCollisionBulletsJackie()
             this.isCollisionBulletsNaveJackie()
             this.isCollisionDoubleBulletJackie()
+            if (this.jackie.liveJackie === 0) {
+                this.youWin()
+            }
+
+
 
         }
 
@@ -673,8 +684,33 @@ const Game = {
 
 
     gameOver() {
+        this.fondo1 = document.createElement('img')
 
-        console.log('finish')
+        this.fondo1.src = "./img/final.png"
+
+        this.fondo1.style.position = 'absolute'
+
+        this.fondo1.style.width = `${this.gameSize.w}px`
+        this.fondo1.style.height = `${this.gameSize.h}px`
+        this.fondo1.style.left = `0px`
+        this.fondo1.style.top = `0px`
+        this.gameScreen.appendChild(this.fondo1)
+
+    },
+    youWin() {
+
+        this.fondo2 = document.createElement('img')
+
+        this.fondo2.src = "./img/win.png"
+
+        this.fondo2.style.position = 'absolute'
+
+        this.fondo2.style.width = `${this.gameSize.w}px`
+        this.fondo2.style.height = `${this.gameSize.h}px`
+        this.fondo2.style.left = `0px`
+        this.fondo2.style.top = `0px`
+        this.gameScreen.appendChild(this.fondo2)
+
 
     },
 
